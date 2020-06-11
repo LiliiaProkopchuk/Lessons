@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url('../images/fon.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  font-family: 'Lato', sans-serif;
+}
+.tabs_list li {
+  display: inline-block;
+  padding: 29px;
+}
+.tabs_list li a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #b7bacd;
+  text-align: center;
+  opacity: 0.5;
+  position: relative;
+}
+.tabs_list li a.active {
+  color: #fff;
+  opacity: 1;
+}
+.tabs_list li a.active h3 {
+  padding-bottom: 30px;
+  border-bottom: 2px solid #fff;
+}
+.tabs_list li a.active:hover {
+  color: #fff;
+  opacity: 1;
+}
+.tabs_list li a:hover {
+  opacity: 0.7;
+}
+.container {
+  width: 50%;
+  margin: 145px auto;
+  background-color: #2b3040;
+}
+.tab_wrapper {
+  background-color: #212534;
+  height: 425px;
+}
+.tab {
+  display: none;
+}
+.tab.active {
+  display: block;
+}
+.content {
+  display: flex;
+  color: #fff;
+}
+.content .image {
+  width: 40%;
+  padding: 60px 45px 0 45px;
+}
+.content .info {
+  width: 60%;
+  padding: 70px 70px 60px 0;
+}
+.content .info h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+.content .info p {
+  font-size: 14px;
+  color: #b7bacd;
+  margin-bottom: 60px;
+}
+.content .info div {
+  font-size: 14px;
+  margin-bottom: 45px;
+}
+.content .info button {
+  width: 165px;
+  height: 55px;
+  background-color: #13e28d;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+}
+.content .info .buy {
+  display: inline-block;
+}
+.content .info .buy .sale {
+  font-size: 12px;
+  color: #fedc3f;
+  margin-bottom: 10px;
+}
+.content .info .buy .price {
+  font-size: 32px;
+  margin: 0;
+}
+.content .info .bottom {
+  display: flex;
+  justify-content: space-between;
+}
+ul {
+  height: 115px;
+}
+.icon {
+  width: 162px;
+  height: 20px;
+}
+h3 {
+  text-align: center;
+  padding-top: 15px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
