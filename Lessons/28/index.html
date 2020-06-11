@@ -4,77 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classes</title>
+    <title>Document Object Model (DOM)</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <div class="container">
         <div class="task1">
-            <div class="task1_center">
-                <input type="text" id="var1">
-                <label for="var1">Enter the value of the radius of the circle</label>
-                <br>
-                <input type="text" id="var2">
-                <label for="var2">Enter the value of the diameter of the circle</label>
-                <br>
-                <button type="button" onclick="circle_info()">Get Information</button>
-                <div style="border: 1px solid #d86624; width: 200px;"><span id="radius"></span></div>
-                <div style="border: 1px solid #d86624; width: 200px;"><span id="new_radius"></span></div>
-                <div style="border: 1px solid #d86624; width: 200px;"><span id="diametr"></span></div>
-                <div style="border: 1px solid #d86624; width: 200px;"><span id="area"></span></div>
-                <div style="border: 1px solid #d86624; width: 200px;"><span id="length"></span></div>
-                <br>
-            </div>
+            <button type="button" onclick="addList()">Song list</button>
+            <br>
+            <br>
+
         </div>
 
         <div class="task2">
-            <div class="task2_center">
-                <input type="text" id="var_color">
-                <label for="var_color">Write the name of the color for the text</label>
-                <br>
-                <br>
-                <input type="text" id="var_text" style="width:600px">
-                <label for="var_text">Write your text</label>
-                <br>
-                <br>
-                <button type="button" onclick="print_text()">Display text</button>
-                <br>
-                <div id="text" style="border: 1px solid #d86624; width: 200px;"></div>
-                <br>
-                <button type="button" onclick="fullMarker()">Refill marker</button>
-                <br>
-                <div style="border: 1px solid #d86624; width: 200px;"><span id="remaining"></span></div>
-            </div>
+            <button type="button" onclick="myWindow()">Window</button>
+            <br>
+            <br>
+            <div class="task2_rez"></div>
         </div>
-
 
         <div class="task3">
-            <div class="task3_center">
-                <input type="text" id="var_surname">
-                <label for="var_color">Enter the surname of the employee</label>
-                <br>
-                <input type="text" id="var_name">
-                <label for="var_color">Enter employee name</label>
-                <br>
-                <input type="text" id="var_position">
-                <label for="var_color">Indicate the position of the employee</label>
-                <br>
-                <input type="text" id="var_experience">
-                <label for="var_color">Indicate the work experience of the employee(years)</label>
-                <br>
-                <button type="button" onclick="addEmployee()">Add employee</button>
-                <br>
-                <br>
-                <button type="button" onclick="showTable()">Show list</button>
-                <br>
-                <div id="task3_rez"></div>
-            </div>
+            <a href="task3.html">TASK 3</a>
         </div>
     </div>
-    <script src="assets/js/main1.js"></script>
+
+    <div id="task1_rez"></div>
+
     <script src="assets/js/main2.js"></script>
-    <script src="assets/js/main3.js"></script>
 </body>
 
 </html>

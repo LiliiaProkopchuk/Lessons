@@ -1,230 +1,341 @@
-//Задача 1
-//Условие 
-let cars = {
-    manufacturer: "Ford",
-    model: "Mustang",
-    year: 1966,
-    average_speed: 180
+//Задание 1
+let shop_list = [
+    {
+        name: "Milk",
+        amount: 2,
+        buy: false
+    },
+    {
+        name: "Tea",
+        amount: 1,
+        buy: true
+    },
+    {
+        name: "Chicken",
+        amount: 1,
+        buy: false
+    },
+    {
+        name: "Eggs",
+        amount: 20,
+        buy: false
+    },
+    {
+        name: "Chocolate",
+        amount: 2,
+        buy: true
+    }
+]
+
+function drawShopList() {
+    let str = '',
+        is_buy = '&#9658;';
+    shop_list.sort((a, b) => {
+        return a.buy - b.buy;
+    });
+    for (let i = 0; i < shop_list.length; i++) {
+        if (shop_list[i].buy) {
+            is_buy = '&#9989;';
+        } else {
+            is_buy = '&#9658;';
+        }
+        str += `<li class="without"><span>${is_buy} ${shop_list[i].name}</span>: <b>${shop_list[i].amount
+            }</b ></li > `;
+    }
+    document.getElementById("shop_list").innerHTML = str;
 }
 
-//Решение Задача 1.1
-function drawInf() {
-    let str = '<ul>';
-    for (let key in cars) {
-        str += `<li> ${key} : ${cars[key]}`;
-    } str += '</ul>';
-    document.getElementById('draw_car').innerHTML = str;
+
+function addProduct() {
+    let name = document.getElementById('prod_name').value,
+        amou = document.getElementById('prod_amou').value;
+    if (name != "") {
+        if (amou != "") {
+            addToCart(name, amou);
+        } else {
+            addToCart(name);
+        }
+        document.getElementById('prod_name').value = '';
+        document.getElementById('prod_amou').value = '';
+    } else {
+        alert("Enter product name!");
+    }
+    shop_list.sort((a, b) => {
+        return a.buy - b.buy;
+    });
+    drawShopList();
 }
 
-//Решение Задача 1.2
-function neenedTime() {
+function addToCart(prod_name, prod_amou = 1) {
+    prod_amou = parseInt(prod_amou);
+    let is_prod = shop_list.filter(function (prod, index) {
+        if (prod.name === prod_name) {
+            let new_amou = 0;
+            if (shop_list[index].buy) {
+                shop_list[index].buy = false;
+                new_amou = prod_amou;
+            } else {
+                new_amou = shop_list[index].amount + prod_amou;
+            }
+            shop_list[index].amount = new_amou;
+            return prod;
+        }
+    });
+    if (is_prod.length == 0) {
+        shop_list.push({
+            name: prod_name,
+            amount: prod_amou,
+            buy: false
+        });
+    }
+}
 
-    let dist = parseInt(document.getElementById('task2_var').value),
-        rez = 0,
-        rezh = 0,
-        rezm = 0,
-        reztime = '';
-    rez += (dist / cars.average_speed);
-    if (dist > cars.average_speed * 4) {
-        if ((dist % 4) == 0) {
-            rez += 1;
+// получается, что объявила is_prod но не использовала. хотя функция работает нормально
+
+function addPursh() {
+    let name = document.getElementById('prod_name_add').value;
+    let is_prod = shop_list.filter(function (prod, index) {
+        if (name != "") {
+            let new_buy = false;
+            if (prod.name == name) {
+                if (prod.buy === false) {
+                    shop_list[index].buy = false;
+                    new_buy = true;
+                    shop_list[index].buy = new_buy;
+                    return prod;
+                } if (prod.buy === true) {
+                    alert('Product already purchased');
+                }
+            }
+        }
+    });
+    shop_list.sort((a, b) => {
+        return a.buy - b.buy;
+    })
+    drawShopList();
+}
+
+drawShopList();
+
+
+//Задание 2
+
+let my_receipt = [
+    {
+        name: 'Milk',
+        amount: 2,
+        price: 12
+    },
+    {
+        name: 'Coffee',
+        amount: 1,
+        price: 30
+    },
+    {
+        name: 'Bread',
+        amount: 1,
+        price: 7
+    },
+    {
+        name: 'Jelly',
+        amount: 4,
+        price: 15
+    }
+]
+function printeCheck() {
+    let str = '';
+    for (let i = 0; i < my_receipt.length; i++) {
+        str += `<li><span>${my_receipt[i].name}: ${my_receipt[i].amount}pc ${my_receipt[i].price}dollars</li > `;
+    }
+    document.getElementById("print_ckeck").innerHTML = str;
+}
+function totalCheck() {
+    let str = 0;
+    for (let i = 0; i < my_receipt.length; i++) {
+        str += my_receipt[i].price * my_receipt[i].amount;
+    }
+    document.getElementById("total_ckeck").innerHTML = str + ' dollars';
+}
+function mostExProd() {
+    let ex_price = 0;
+    for (let i = 0; i < my_receipt.length - 1; i++) {
+        if (my_receipt[i].price > my_receipt[i + 1].price) {
+            ex_price = my_receipt[i].price;
         }
     }
-    rezh = Math.floor(rez);
-    rezm = Math.floor((rez * 60) - (rezh * 60));
-    reztime = rezh + ':' + addZero(rezm);
-    document.getElementById('task2_rez').innerText = reztime;
+    document.getElementById("most_exp").innerHTML = ex_price + ' dollars';
 }
-function addZero(n) {
-    if (n < 10) {
-        return "0" + n;
+function averagePrice() {
+    let aver_price = 0,
+        total_check = 0,
+        total_amount = 0;
+    for (let i = 0; i < my_receipt.length; i++) {
+        total_check += my_receipt[i].price * my_receipt[i].amount;
+        total_amount += my_receipt[i].amount;
+    }
+    aver_price = total_check / total_amount;
+    document.getElementById("aver_price").innerHTML = aver_price.toFixed(2) + ' dollars';
+}
+
+
+//Задание 3
+let style = [{
+    property: 'font-size',
+    value: '30px'
+},
+{
+    property: 'color',
+    value: '#258741'
+},
+{
+    property: 'font-family',
+    value: 'Arial, sans-serif'
+},
+{
+    property: 'text-decoration',
+    value: 'line-through'
+},
+{
+    property: 'text-align',
+    value: 'center'
+}
+];
+
+
+let text = 'Your ad could be here',
+    style_str = '';
+for (let i = 0; i < style.length; i++) {
+    style_str += style[i].property + ':' + style[i].value + ';';
+}
+document.write(`<p style="${style_str}">${text}</p>`);
+
+//Задача 4
+let academy = [
+    {
+        audience: 'Right',
+        numbers: 12,
+        faculty: 'Faculty of Advocacy'
+    },
+    {
+        audience: 'Philosophy',
+        numbers: 20,
+        faculty: 'Psychology faculty'
+    },
+    {
+        audience: 'Psychology',
+        numbers: 16,
+        faculty: 'Faculty of Advocacy'
+    },
+    {
+        audience: 'Information Technology',
+        numbers: 10,
+        faculty: 'Faculty of Cybersecurity'
+    },
+    {
+        audience: 'Psychology',
+        numbers: 15,
+        faculty: 'Psychology faculty'
+    }
+]
+
+function drawAcademyList() {
+    let str = '';
+    for (let i = 0; i < academy.length; i++) {
+        str += `<li><span>${academy[i].audience} (${academy[i].numbers
+            } seats) </span><i>${academy[i].faculty}</i></li > `;
+    }
+    document.getElementById("academy_list").innerHTML = str;
+}
+
+function showFaculty() {
+    let name = document.getElementById('faculty').value,
+        str = '';
+    if (name != '') {
+        for (let i = 0; i < academy.length; i++) {
+            if (name == academy[i].faculty) {
+                str += `<li>${academy[i].audience}</li>`;
+            }
+        }
     } else {
-        return n;
+        alert('Enter faculty')
     }
+    document.getElementById("faculty_list").innerHTML = str;
 }
 
-//Задача 2 
-//Условие 
 
-let fractionFirst = {
-    numerator: 14,
-    denominator: 56
-}
-let fractionSecond = {
-    numerator: 9,
-    denominator: 30
-}
-
-//Решение
-
-let frac_result = {};
-
-function draw_frac() {
-    let str = '<ul>';
-    for (let key in frac_result) {
-        str += `<li> ${key} : ${frac_result[key]}`;
-    } str += '</ul>';
-    document.getElementById('draw_frac').innerHTML = str;
-}
-
-function addFraction() {
-    let a = fractionFirst.numerator,
-        b = fractionFirst.denominator,
-        c = fractionSecond.numerator,
-        d = fractionSecond.denominator,
-        inf = '',
-        rezsum = sumFraction(a, b, c, d),
-        rezdif = difFraction(a, b, c, d),
-        rezpro = proFraction(a, b, c, d),
-        rezpriv = privFraction(a, b, c, d),
-        ab = nod(a, b),
-        cd = nod(c, d),
-        rezred = '';
-    inf = a + '/' + b + " and " + c + '/' + d;
-    rezred = (a / ab) + '/' + (b / ab) + ' and ' + (c / cd) + '/' + (d / cd);
-    frac_result["Preset Fractions"] = inf;
-    frac_result["Sum of fractions"] = rezsum;
-    frac_result["Fraction difference"] = rezdif;
-    frac_result["Fraction Product"] = rezpro;
-    frac_result["Private fractions Product"] = rezpriv;
-    frac_result["Reduced fractions"] = rezred;
-    draw_frac();
-}
-
-function sumFraction(a, b, c, d) {
-    return ((a * d) + (b * c)) + '/' + (b * d);
-}
-function difFraction(a, b, c, d) {
-    return ((a * d) - (b * c)) + '/' + (b * d);
-}
-function proFraction(a, b, c, d) {
-    return (a * c) + '/' + (b * d);
-}
-function privFraction(a, b, c, d) {
-    return (a * d) + '/' + (b * c);
-}
-function nod(x, y) {
-    while (y !== 0) y = x % (x = y);
-    return x;
-}
-
-//Задача 3
-
-//Условие
-let time = {
-    hours: 6,
-    minutes: 25,
-    seconds: 12
-}
-
-//Решение 
-//Задача 3.1
-function drawTime() {
-    let str = '<ul>';
-    for (let key in time) {
-        str += `<li> ${key} : ${time[key]}`;
-    } str += '</ul>';
-    document.getElementById('time_inf').innerHTML = str;
-}
-
-//Задача 3.2
-function incSec() {
-    let secdif = document.getElementById('change_sec').value,
-        h = time.hours,
-        m = time.minutes,
-        s = time.seconds,
-        rez = 0,
-        reztime = '';
-    rez = parseInt(timeToSec(h, m, s)) + parseInt(secdif);
-    reztime = secToTime(rez);
-    drawTime();
-}
-function redSec() {
-    let secdif = document.getElementById('change_sec').value,
-        h = time.hours,
-        m = time.minutes,
-        s = time.seconds,
-        rez = '';
-    rez = timeToSec(h, m, s) - secdif;
-    rez = secToTime(rez);
-    drawTime();
-}
-
-//Задача 3.3
-function incMin() {
-    let mindif = document.getElementById('change_min').value,
-        h = time.hours,
-        m = time.minutes,
-        s = time.seconds,
-        rez = 0,
-        reztime = '';
-    rez = parseInt(timeToSec(h, m, s)) + (parseInt(mindif) * 60);
-    reztime = secToTime(rez);
-    drawTime();
-}
-function redMin() {
-
-    let mindif = document.getElementById('change_min').value,
-        h = time.hours,
-        m = time.minutes,
-        s = time.seconds,
-        r = timeToSec(h, m, s),
-        rez = '';
-    if (r > mindif * 60) {
-        rez = r - (mindif * 60);
-        rez = secToTime(rez);
-    } else if (r < mindif * 60) {
-        alert("Very big difference!")
+function sortAcademyList() {
+    let str = '';
+    academy.sort((a, b) => {
+        return a.numbers - b.numbers;
+    });
+    for (let i = 0; i < academy.length; i++) {
+        str += `<li><span>${academy[i].audience} (${academy[i].numbers
+            } seats) </span><i>${academy[i].faculty}</i></li>`;
     }
-    drawTime();
+    document.getElementById("academy_list_num").innerHTML = str;
 }
 
-//Задача 3.3
-function incHours() {
-    let hoursdif = document.getElementById('change_hours').value,
-        h = time.hours,
-        m = time.minutes,
-        s = time.seconds,
-        rez = 0,
-        reztime = '';
-    rez = parseInt(timeToSec(h, m, s)) + (parseInt(hoursdif) * 3600);
-    reztime = secToTime(rez);
-    drawTime();
-}
-function redHours() {
-    let hoursdif = document.getElementById('change_hours').value,
-        h = time.hours,
-        m = time.minutes,
-        s = time.seconds,
-        r = timeToSec(h, m, s),
-        rez = '';
-    if (r > hoursdif * 3600) {
-        rez = r - (hoursdif * 3600);
-        rez = secToTime(rez);
-    } else if (r < hoursdif * 3600) {
-        alert("Very big difference!")
+
+//сортировка не выполняется
+
+/*
+function sortAudience() {
+    let str = '';
+    for (let i = 0; i < academy.length; i++) {
+        str += `<li><span>${academy[i].audience} (${academy[i].numbers
+            } seats) </span><i>${academy[i].faculty}</i></li>`;
     }
-    drawTime();
+    academy.sort(function (a, b) {
+        let aa = a.faculty.toLocaleLowerCase(),
+            bb = b.faculty.toLocaleLowerCase();
+        if (aa < bb) {
+            return -1;
+        } if (aa > bb) {
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+    document.getElementById("academy_list_name").innerHTML = str;
 }
+*/
 
-function timeToSec(hours, minutes = 0, second = 0) {
-    return parseInt(hours) * 3600 + parseInt(minutes) * 60 + parseInt(second);
-}
+/* Это задание не поняла
 
-function secToTime(sec) {
-    sec = parseInt(sec);
-    let hours = Math.floor(sec / 3600),
-        minutes = Math.floor((sec - hours * 3600) / 60),
-        seconds = sec - (hours * 3600 + minutes * 60);
-    return time.hours = hours,
-        time.minutes = addZero(minutes),
-        time.seconds = addZero(seconds);
-}
+Вывод на экран только тех аудиторий, которые подходят для переданной группы.
+Объект-группа состоит из названия, количества студентов и названия факультета; */
 
-function addZero(n) {
-    if (n < 10) {
-        return "0" + n;
+
+
+/*function sortAudience() {
+    let str = '',
+        aa = a.audience.toLocaleLowerCase(),
+        bb = b.audience.toLocaleLowerCase();
+    academy.sort((a, b) => {
+        if (aa < bb) {
+            return -1;
+        } if (aa > bb) {
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+    for (let i = 0; i < academy.length; i++) {
+        str += `<li><span>${academy[i].audience} (${academy[i].numbers
+            } seats) </span><i>${academy[i].faculty}</i></li>`;
+    }
+    document.getElementById("academy_list_name").innerHTML = str;
+}*/
+
+/*academy.sort(function (a, b) {
+    let aa = a.audience.toLocaleLowerCase(),
+        bb = b.audience.toLocaleLowerCase();
+    if (aa < bb) {
+        return -1;
+    } if (aa > bb) {
+        return 1;
     } else {
-        return n;
+        return 0;
     }
-}
+});*/
+

@@ -1,201 +1,219 @@
 //task 1
 function task1() {
-    let start = parseInt(document.getElementById('task1_var1').value),
-        end = parseInt(document.getElementById('task1_var2').value),
-        rez = 0;
-    if (start < end) {
-        while (start <= end) {
-            rez += start;
-            start++;
-        }
-    } else {
-        alert("Invalid range")
-    }
+    let first = parseInt(document.getElementById('task1_var1').value),
+        second = parseInt(document.getElementById('task1_var2').value),
+        rez = '';
+    rez = getRez(first, second);
     document.getElementById('task1_rez').innerText = rez;
 }
-
-//task 2  Переделала
-
-/* Первый вариант
-function task2() {
-
-    let first = parseInt(document.getElementById('task2_var1').value),
-        second = parseInt(document.getElementById('task2_var2').value),
-        rezSame = nod(first, second);
-    document.getElementById('task2_rez').innerText = rezSame;
-}
-function nod(x, y) {
-    while (y !== 0) y = x % (x = y);
-    return x;
-}*/
-
-// Второй вариант
-function task2() {
-    let first = parseInt(document.getElementById('task2_var1').value),
-        second = parseInt(document.getElementById('task2_var2').value),
-        rezSame = 0;
-    while (first != 0 && second != 0) {
-        if (first > second) {
-            first = first % second;
-        } else if (second > first) {
-            second = second % first;
-        }
-        rezSame = first + second;
-        document.getElementById('task2_rez').innerText = rezSame;
+function getRez(f, s) {
+    let result = '';
+    if (f > s) {
+        result = 1;
+    } else if (f < s) {
+        result = -1;
+    } else if (f == s) {
+        result = 0;
     }
+    return result;
+}
+
+//task 2
+function task2() {
+    let num = parseInt(document.getElementById('task2_var').value),
+        rez = 0;
+    rez = getFact(num);
+    document.getElementById('task2_rez').innerText = rez;
+}
+function getFact(n) {
+    result = 1;
+    while (n != 0) {
+        result *= n--;
+    }
+    return result;
 }
 
 //task 3
 function task3() {
-    let num = parseInt(document.getElementById('task3_var').value),
-        rez = ' ';
-    for (let i = num; i != 0; i--) {
-        if (num % i == 0) {
-            rez += i + ' ';
-        }
-    }
+    let first = parseInt(document.getElementById('task3_var1').value),
+        second = parseInt(document.getElementById('task3_var2').value),
+        third = parseInt(document.getElementById('task3_var3').value),
+        rez = 0;
+    rez = getCombi(first, second, third);
     document.getElementById('task3_rez').innerText = rez;
 }
-
-//task 4  
-function task4() {
-    debugger
-    let num = document.getElementById('task4_var').value,
-        rez = 0;
-    for (let i = 0; i != num.length; i++) {
-        rez += 1;
-    }
-
-    document.getElementById('task4_rez').innerText = rez;
-
+function getCombi(f, s, th) {
+    let result = 0;
+    result = (f * 100) + (s * 10) + th;
+    return result;
 }
 
-//task 5 Переделала
-function task5() {
 
-    let arNum = [],
-        num = 0,
-        rezPos = 0,
-        rezNeg = 0,
-        rezZero = 0,
-        rezEven = 0,
-        rezOdd = 0;
-    do {
-        num = prompt('Enter number');
-        arNum.push(parseInt(num));
-    } while (arNum.length < 10)
-    for (let i = 0; arNum.length > i; i++) {
-        if (arNum[i] > 0) {
-            rezPos += 1;
-        } else if (arNum[i] < 0) {
-            rezNeg += 1;
-        } else if (arNum[i] == 0) {
-            rezZero += 1;
-        } if (arNum[i] % 2 == 0 && arNum[i] != 0) {
-            rezEven += 1;
-        } if (arNum[i] % 2 !== 0 && arNum[i] != 0) {
-            rezOdd += 1;
+//task 4  Переделала
+function task4() {
+    let first = document.getElementById('task4_var1').value,
+        second = document.getElementById('task4_var2').value,
+        rez = 0;
+    if (second != "") {
+        rez = getArea(first, second);
+    } else {
+        rez = getArea(first);
+    }
+    document.getElementById('task4_rez').innerText = rez.toFixed(2);
+}
+function getArea(f, s = f) {
+    let result = 0;
+    return result = parseFloat(f) * parseFloat(s);
+}
+
+function timeToSec(hours, minutes = 0, second = 0) {
+    return parseInt(hours) * 3600 + parseInt(minutes) * 60 + parseInt(second);
+}
+
+function secToTime(sec) {
+    sec = parseInt(sec);
+    let hours = Math.floor(sec / 3600),
+        minutes = Math.floor((sec - hours * 3600) / 60),
+        seconds = sec - (hours * 3600 + minutes * 60);
+    return addZero(hours) + ":" + addZero(minutes) + ":" + addZero(seconds);
+}
+
+function addZero(n) {
+    if (n < 10) {
+        return "0" + n;
+    } else {
+        return n;
+    }
+}
+
+function isPerfect(num) {
+
+    let sum = 0;
+    for (let i = 1; i < num; i++) {
+        if ((num % i) == 0) {
+            sum += i;
         }
     }
+    if (sum == num) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
-
-    document.getElementById('task4_rez1').innerText = rezPos;
-    document.getElementById('task4_rez2').innerText = rezNeg;
-    document.getElementById('task4_rez3').innerText = rezZero;
-    document.getElementById('task4_rez4').innerText = rezEven;
-    document.getElementById('task4_rez5').innerText = rezOdd;
-    document.getElementById('task4_rez6').innerText = arNum;
+//task 5
+function task5() {
+    let num = parseInt(document.getElementById('task5_var').value),
+        rez = '';
+    if (isPerfect(num)) {
+        rez = "Yes";
+    } else {
+        rez = "No";
+    }
+    document.getElementById('task5_rez').innerText = rez;
 }
 
 //task 6
 function task6() {
-    let first = '',
-        second = '',
-        act = '',
-        rez = 0,
-        conf = true;
-    do {
-        first = prompt('Add first number');
-        second = prompt('Add second number');
-        act = prompt('Select action ');
-        first = parseInt(first);
-        second = parseInt(second);
-
-        if (act == '+') {
-            rez = first + second;
-        } else if (act == '-') {
-            rez = first - second;
-        } else if (act == '/') {
-            rez = first / second;
-        } else if (act == '*') {
-            rez = first * second;
-        } else {
-            alert('Incorrect action')
+    let from = parseInt(document.getElementById('task6_var1').value),
+        to = parseInt(document.getElementById('task6_var2').value),
+        rez = '';
+    if (to > from) {
+        for (let i = from; i <= to; i++) {
+            if (isPerfect(i)) {
+                rez += i + " ";
+            }
         }
-        alert(rez);
-        conf = confirm('One more time?');
-    } while (conf);
-    alert('Done')
+    } else {
+        rez = "Wrong range!"
+    }
+    document.getElementById('task6_rez').innerText = rez;
 }
 
 //task 7
 function task7() {
 
-    let num = parseInt(document.getElementById('task7_var1').value),
-        shift = parseInt(document.getElementById('task7_var2').value),
-        numStr = num.toString(),
-        arNum = numStr.split(''),
-        rez = '';
-    while (numStr.length != rez.length) {
-        if (shift == numStr.length) {
-            shift = 0;
-        }
-        rez += arNum[shift];
-        shift++;
+    let h = parseInt(document.getElementById('task7_hours').value),
+        m = parseInt(document.getElementById('task7_minutes').value),
+        s = parseInt(document.getElementById('task7_seconds').value),
+        r = "";
+    if (m < 60 && s < 60) {
+        r = h + ":" + addZero(m) + ":" + addZero(s);
+    } else {
+        r = "Wrong numbers";
     }
-    document.getElementById('task7_rez').innerText = rez;
+    document.getElementById('task7_rez').innerText = r;
 }
 
 //task 8
 function task8() {
-    debugger
-    let week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-    let day = prompt('Enter present day'),
-        ind = week.indexOf(day),
-        i = 1,
-        rez = '',
-        conf = true;
-    do {
-        if (ind + 1 < 7) {
-            rez = week[ind + i];
-            i++;
-            alert(rez);
+
+    let h = document.getElementById('task8_hourd').value,
+        m = document.getElementById('task8_minutes').value,
+        s = document.getElementById('task8_seconds').value,
+        r = 0;
+    if (m != "") {
+        if (s != "") {
+            r = timeToSec(h, m, s);
         } else {
-            ind = 0;
-            i = 0;
+            r = timeToSec(h, m);
         }
-        conf = confirm('One more time?');
-    } while (conf);
-    alert('That is all');
+    } else {
+        r = timeToSec(h);
+    }
+    document.getElementById('task8_rez').innerText = r;
 }
 
-//task 9
-function task9(id) {
-    let result = '';
-    for (let i = 2; i < 10; i++) {
-        result += multiP(i);
+//tak 9
+function task9() {
+
+    let sec = document.getElementById('task9_var').value,
+        rez = '';
+    if (sec != '') {
+        rez = secToTime(sec);
+    } else {
+        rez = "Enter seconds";
     }
-    document.getElementById(id).innerHTML = result;
-}
-function multiP(num) {
-    let rez = 0;
-    let str_rez = '<div class="table" style="width: 10%; border: 1px solid #147852; padding-left: 15px;">';
-    for (let i = 1; i < 11; i++) {
-        rez = i * num;
-        str_rez += num + ' * ' + i + ' = ' + rez + '<br>';
-    }
-    str_rez += '</div>';
-    return str_rez;
+    document.getElementById('task9_rez').innerText = rez;
 }
 
-// 10 не пробовала
+//task 10
+function task10() {
+
+    let hoursF = document.getElementById('task10_hours1').value,
+        minutesF = document.getElementById('task10_minutes1').value,
+        secondsF = document.getElementById('task10_seconds1').value,
+        hoursTo = document.getElementById('task10_hours2').value,
+        minutesTo = document.getElementById('task10_minutes2').value,
+        secondsTo = document.getElementById('task10_seconds2').value,
+        secF = 0,
+        secTo = 0,
+        rezsec = 0,
+        rez = '';
+    if (minutesF != "") {
+        if (secondsF != "") {
+            secF = timeToSec(hoursF, minutesF, secondsF);
+        } else {
+            secF = timeToSec(hoursF, minutesF);
+        }
+    } else {
+        secF = timeToSec(hoursF);
+    }
+    if (minutesTo != "") {
+        if (secondsTo != "") {
+            secTo = timeToSec(hoursTo, minutesTo, secondsTo);
+        } else {
+            secTo = timeToSec(hoursTo, minutesTo);
+        }
+    } else {
+        secTo = timeToSec(hoursTo);
+    }
+    if (secF > secTo) {
+        rezsec = secF - secTo;
+    } else {
+        rezsec = secTo - secF;
+    }
+    rez = secToTime(rezsec);
+    document.getElementById('task10_rez').innerText = rez;
+}
+

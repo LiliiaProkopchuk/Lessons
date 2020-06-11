@@ -4,110 +4,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson23</title>
-    <style>
-        body {
-            background-color: #e4cfb4;
-        }
-
-        fieldset {
-            margin: 0 auto;
-            width: 800px;
-        }
-
-        fieldset {
-            border: 2px solid #146975;
-        }
-
-        p {
-            font-weight: 600;
-            color: #962d2d;
-        }
-
-        p.quiz {
-            text-align: center;
-        }
-
-        a {
-            font-size: 50px;
-            text-decoration: none;
-        }
-    </style>
+    <title>Cycles</title>
 </head>
 
 <body>
-
     <fieldset>
         <legend>Task 1</legend>
-        <label>Your age</label>
-        <input type="text" id="task1_var" placeholder="How old are you?">
-        <button type="button" onclick="task1()">Check</button>
-        <p>Age group: <span id="task1_rez"></span></p>
+        <label>Enter range of numbers</label>
+        <input type="text" id="task1_var1" placeholder="From">
+        <input type="text" id="task1_var2" placeholder="To">
+        <button type="button" onclick="task1()">Count</button>
+        <p>Sum of numbers in a given range: <span id="task1_rez"></span></p>
     </fieldset>
+
     <fieldset>
         <legend>Task 2</legend>
-        <label>Your nubber</label>
-        <input type="text" id="task2_var" placeholder="From 0 to 9">
-        <button type="button" onclick="task2()">Check</button>
-        <p>Special symbol: <span id="task2_rez"></span></p>
+        <label>Enter two numbers</label>
+        <input type="text" id="task2_var1" placeholder="First">
+        <input type="text" id="task2_var2" placeholder="Second">
+        <button type="button" onclick="task2()">Find</button>
+        <p>Greatest common factor: <span id="task2_rez"></span></p>
     </fieldset>
+
     <fieldset>
         <legend>Task 3</legend>
-        <label>Your nubber</label>
-        <input type="text" id="task3_var" placeholder="Three digit number">
-        <button type="button" onclick="task3()">Check</button>
-        <p>The presence of the same numbers: <span id="task3_rez"></span></p>
+        <label>Enter numbers</label>
+        <input type="text" id="task3_var" placeholder="Yor number">
+        <button type="button" onclick="task3()">Find</button>
+        <p>All divisors of this number: <span id="task3_rez"></span></p>
     </fieldset>
+
     <fieldset>
         <legend>Task 4</legend>
-        <label>Enter a year</label>
-        <input type="text" id="task4_var" placeholder="Year">
-        <button type="button" onclick="task4()">Check</button>
-        <p>Leap year: <span id="task4_rez"></span></p>
+        <label>Enter numbers</label>
+        <input type="text" id="task4_var" placeholder="Yor number" style="width: 100%;">
+        <button type="button" onclick="task4()">Count</button>
+        <p>The number of digits in the entered number: <span id="task4_rez"></span></p>
     </fieldset>
+
     <fieldset>
         <legend>Task 5</legend>
-        <label>Enter the number</label>
-        <input type="text" id="task5_var" placeholder="Five numbers">
-        <button type="button" onclick="task5()">Check</button>
-        <p>Palindrome: <span id="task5_rez"></span></p>
+        <label>Enter numbers</label>
+        <button type="button" onclick="task5()">Click</button>
+
+        <p>Your numbers: <span id="task4_rez6"></span></p>
+        <p>Positive numbers: <span id="task4_rez1"></span></p>
+        <p>Negative numbers: <span id="task4_rez2"></span></p>
+        <p>Zeros: <span id="task4_rez3"></span></p>
+        <p>Even numbers: <span id="task4_rez4"></span></p>
+        <p>Odd numbers: <span id="task4_rez5"></span></p>
     </fieldset>
+
     <fieldset>
         <legend>Task 6</legend>
-        <label>Enter amount</label>
-        <input type="text" id="task6_var" placeholder="USD">
-        <br>
-        <label>Choose currency</label>
-        <br>
-        <input type="radio" id="task6_v1" name="1">EUR
-        <br>
-        <input type="radio" id="task6_v2" name="1">UAN
-        <br>
-        <input type="radio" id="task6_v3" name="1">AZN
-        <br>
-        <br>
-        <button type="button" onclick="task6()">Convert</button>
-        <p>Result: <span id="task6_rez"></span></p>
+        <label>Calculator</label>
+        <button type="button" onclick="task6()">GO</button>
     </fieldset>
+
     <fieldset>
         <legend>Task 7</legend>
-        <label>Purchase amount</label>
-        <input type="text" id="task7_var" placeholder="Amount">
-        <button type="button" onclick="task7()">Check</button>
-        <p>Discounted purchase amount: <span id="task7_rez"></span></p>
+        <label>Enter number and shift</label>
+        <input type="text" id="task7_var1" placeholder="Number">
+        <input type="text" id="task7_var2" placeholder="Shift">
+        <button type="button" onclick="task7()">Change</button>
+        <p>Modified number: <span id="task7_rez"></span></p>
     </fieldset>
+
     <fieldset>
         <legend>Task 8</legend>
-        <label>Circumference</label>
-        <input type="text" id="task8_var1" placeholder="Length">
-        <br>
-        <label>Square perimeter</label>
-        <input type="text" id="task8_var2" placeholder="Perimeter">
-        <br>
-        <button type="button" onclick="task8()">Check</button>
-        <p>Does the circle fit in the square? <span id="task8_rez"></span></p>
+        <label>Display multiplication table</label>
+        <button type="button" onclick="task8()">GO</button>
     </fieldset>
-    <p class="quiz"><a href="task9.html">TASK 9 (Quiz)</a></p>
+
+    <fieldset>
+        <legend>Task 9</legend>
+        <label>Display multiplication table</label>
+        <button type="button" onclick="task9('mult_table')">GO</button>
+        <br>
+        <br>
+        <div id="mult_table" style="display: flex; flex-wrap: wrap;"></div>
+    </fieldset>
+
     <script src="assets/js/main.js"></script>
 </body>
 

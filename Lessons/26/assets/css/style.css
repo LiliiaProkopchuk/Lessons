@@ -1,43 +1,49 @@
-.cars {
+body{
+    width: 100%;
+    margin: 0 auto;
+    background-color: #d1bb59;
+}
+.task_1, .task_2, .task_4{
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 20px;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
-.cars_first{
-    padding: 10px;
-    border: 2px solid #258963;
-    width: 35%;
+.shop{
+    width: 30%;
+    height: 250px;
+    padding: 15px;
+    border: 2px solid #148956;
+    box-sizing: border-box;
 }
-.cars_second{
-    width: 35%;
+.check{
+    width: 25%;
+    height: 250px;
+    padding: 15px;
+    border: 2px solid #148956;
+    box-sizing: border-box;
 }
-.footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.academy{
+    width: 28%;
+    height: 270px;
+    padding: 15px;
+    border: 2px solid #148956;
+    box-sizing: border-box;
 }
-.fraction{
-    width: 32%;
+.academy_second{
+    width: 15%;
+    height: 270px;
+    padding: 15px;
+    border: 2px solid #148956;
+    box-sizing: border-box;
 }
-.time{
-    width: 40%;
-}
-fieldset{
-    border:2px solid #258963;
-    height: 300px;
-}
-p{
-    color: #258963;
-}
-span{
-    color: #be8d22;
-}
-.title{
-    font-size: 25px;
+h2{
+    color: #083622;
     text-align: center;
-    font-weight: 700;
-    margin-bottom: 0;
 }
-.fraction p{
-    margin: 0;
+.without{
+    list-style-type: none;
 }
