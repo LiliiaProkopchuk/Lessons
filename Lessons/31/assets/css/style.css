@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    background-image: url('../images/fon.png');
+    background-size: 76% auto;
+    background-position: center top;
+    background-repeat: repeat-y;
+}
+.title{
+    font-size: 18px;
+    font-weight: 600;
+    color: #303030;
+}
+.slogan{
+    font-size: 76px;
+    font-weight: 600;
+}
+header{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 60px 0;
+    position: relative;
+}
+.cross, .triangle{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+}
+.triangle{
+    left: 50px;
+    top: 55%;
+}
+.cross{
+    right: 200px;
+    top: 40px;
+}
+.slider{
+    padding-left: 130px;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 100px;
+}
+img{
+    width: 90%;
+    height: 90%;
+}
+.arrow{
+    border: 2px solid rgba(0, 0, 0, 0.781);
+    color: rgba(0, 0, 0, 0.781);
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    font-size: 70px;
+    text-align: center;
+    line-height: 70px;
+    font-weight: 200;
+    cursor: pointer;
+}
+.prev{
+    left: 30px;
+}
+.next{
+    right: 30px;
+}
+.next, .prev{
+    position: absolute;
+    top:115px;
+}
+.up{
+    font-size: 25px;
+    width: 70%;
+    line-height: 25px;
+}
+.footer{
+    font-size: 12px;
+    line-height: 40px;
+    padding-bottom: 14px;
+}
+.up, .footer{
+    color:#fff;
+    font-weight: 600;
+}
+.content{
+    position: relative;
+    width: 350px;
+}
+.font{
+    width: 90%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 190px 0 0 20px;
+    opacity: 0;
+}
+.content:hover img{
+    opacity: .5;
+}
+.content:hover .font{
+    background-color: #1bf1adb4;
+    opacity: 1;
+    color: #fff;
+}
