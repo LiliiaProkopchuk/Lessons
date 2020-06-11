@@ -1,0 +1,145 @@
+@font-face{
+    font-family: 'Futura PT Heavy';
+    src: url('../fonts/Futura\ PT.ttf');
+}
+@font-face{
+    font-family: 'Proxima Nova Regular';
+    src: url('../fonts/Proxima\ Nova\ Regular.otf');
+}
+@font-face{
+    font-family: 'Playfair Display';
+    src: url('../fonts/Playfair\ Display.ttf');
+}
+
+body{
+    background-color: #464f54;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+ul{
+    list-style-type: none;
+}
+li{
+    display: inline;
+}
+i{
+    color: white;
+    font-size: 25px;
+    width: 35px;
+    padding-left: 20px;
+}
+.main{
+    display: flex;
+    width: 1060px;
+    height: 750px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 150px;
+    box-shadow: 0 0 40px 5px rgb(32, 32, 32);
+}
+.left{
+    width: 68px;
+    height: 750px;
+    border-right: 2px solid #e8eced;
+}
+.right{
+    width: 995px;
+    box-sizing: border-box;
+    padding-top: 200px;
+    padding-left: 51px;
+    padding-right: 124px;
+}
+p:nth-child(1){
+    font-family: 'Proxima Nova Regular';
+    font-size: 19.84px;
+    text-transform: uppercase;
+    letter-spacing: 4.5px;
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: #b4b4b4;
+}
+p:nth-child(2){
+    font-family: 'Futura PT Heavy';
+    font-size: 77.93px;
+    text-transform: uppercase;
+    letter-spacing: 4.1px;
+    margin-top: 0;
+    margin-bottom: -7px;
+    color: #2a2a2a;
+}
+p:nth-child(3){
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 47px;
+    color: #8f8f8f;
+    font-style: italic;
+}
+p:nth-child(4),
+p:nth-child(5){
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 26.92px;
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 22px;
+    text-align: justify;
+}
+
+.head{
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 45px;
+    z-index: 2;
+}
+.first{
+    background-color: black;
+    width: 880px;
+    height: 185px;
+    padding-left: 60px;
+    box-sizing: border-box;
+}
+.icons{
+    background-color: #f1b82b;
+    width: 810px;
+    height: 75px;
+    margin-left: 70px;
+    padding-left: 15px;
+    padding-top: 5px;
+    box-sizing: border-box;
+}
+hr{
+    border: none; 
+    background-color:#303030;
+    height: 4px; 
+}
+li{
+    opacity: 0.5;
+}
+li:hover{
+    opacity: 1;
+}
+.title{
+    font-family: 'Proxima Nova Regular';
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 4.5px;
+    padding-top: 50px;
+    margin-bottom: 0;
+    color: #b4b4b4;
+}
+[value]{
+    font-family: Playfair Display;
+    font-size: 48px;
+    color: white;
+    text-transform: capitalize;
+    margin: 0 auto;
+}
+input{
+    background-color: transparent;
+    border-color: transparent;
+}
+input:focus{
+    outline: none;
+}

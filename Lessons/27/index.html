@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="task_1">
+        <div class="shop">
+            <h2>Shopping list</h2>
+            <ol id="shop_list"></ol>
+        </div>
+        <div class="shop">
+            <h2>Adding a product to the list</h2>
+            <input type="text" id="prod_name" placeholder="Prodact name">
+            <br>
+            <br>
+            <input type="text" id="prod_amou" placeholder="Number of products">
+            <br>
+            <br>
+            <button type="button" onclick="addProduct()">Add to list</button>
+        </div>
+        <div class="shop">
+            <h2>Mark purchased goods</h2>
+            <input type="text" id="prod_name_add" placeholder="Prodact name">
+            <br>
+            <br>
+            <button type="button" onclick="addPursh()">Add to purchased</button>
+        </div>
+    </div>
+
+    <div class="task_2">
+        <div class="check">
+            <h2>Printout of check</h2>
+            <button type="button" onclick="printeCheck()">Printout</button>
+            <br>
+            <br>
+            <div id="print_ckeck"></div>
+        </div>
+        <div class="check">
+            <h2>Total purchase amount</h2>
+            <button type="button" onclick="totalCheck()">Calculate</button>
+            <br>
+            <br>
+            <div id="total_ckeck"></div>
+        </div>
+        <div class="check">
+            <h2>The most expensive product</h2>
+            <button type="button" onclick="mostExProd()">Find</button>
+            <br>
+            <br>
+            <div id="most_exp"></div>
+        </div>
+        <div class="check">
+            <h2>The average cost of one item per check</h2>
+            <button type="button" onclick="averagePrice()">Find</button>
+            <br>
+            <br>
+            <div id="aver_price"></div>
+        </div>
+    </div>
+    <div class="task_4">
+        <div class="academy">
+            <h2>Academy</h2>
+            <button type="button" onclick="drawAcademyList()">Show Audience list</button>
+            <br>
+            <br>
+            <div id="academy_list"></div>
+        </div>
+        <div class="academy_second">
+            <h2>Enter the name of the faculty</h2>
+            <input type="text" id="faculty" placeholder="Faculty">
+            <br>
+            <br>
+            <button type="button" onclick="showFaculty()">Show suitable</button>
+            <br>
+            <br>
+            <div id="faculty_list"></div>
+        </div>
+        <div class="academy">
+            <h2>Sort audiences by number of seats</h2>
+            <button type="button" onclick="sortAcademyList()">Change</button>
+            <br>
+            <br>
+            <div id="academy_list_num"></div>
+        </div>
+        <div class="academy">
+            <h2>Sort audiences by name</h2>
+            <button type="button" onclick="sortAudience()">Change</button>
+            <br>
+            <br>
+            <div id="academy_list_name"></div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

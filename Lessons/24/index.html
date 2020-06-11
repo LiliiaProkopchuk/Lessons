@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cycles</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Task 1</legend>
+        <label>Enter range of numbers</label>
+        <input type="text" id="task1_var1" placeholder="From">
+        <input type="text" id="task1_var2" placeholder="To">
+        <button type="button" onclick="task1()">Count</button>
+        <p>Sum of numbers in a given range: <span id="task1_rez"></span></p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Task 2</legend>
+        <label>Enter two numbers</label>
+        <input type="text" id="task2_var1" placeholder="First">
+        <input type="text" id="task2_var2" placeholder="Second">
+        <button type="button" onclick="task2()">Find</button>
+        <p>Greatest common factor: <span id="task2_rez"></span></p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Task 3</legend>
+        <label>Enter numbers</label>
+        <input type="text" id="task3_var" placeholder="Yor number">
+        <button type="button" onclick="task3()">Find</button>
+        <p>All divisors of this number: <span id="task3_rez"></span></p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Task 4</legend>
+        <label>Enter numbers</label>
+        <input type="text" id="task4_var" placeholder="Yor number" style="width: 100%;">
+        <button type="button" onclick="task4()">Count</button>
+        <p>The number of digits in the entered number: <span id="task4_rez"></span></p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Task 5</legend>
+        <label>Enter numbers</label>
+        <button type="button" onclick="task5()">Click</button>
+
+        <p>Your numbers: <span id="task4_rez6"></span></p>
+        <p>Positive numbers: <span id="task4_rez1"></span></p>
+        <p>Negative numbers: <span id="task4_rez2"></span></p>
+        <p>Zeros: <span id="task4_rez3"></span></p>
+        <p>Even numbers: <span id="task4_rez4"></span></p>
+        <p>Odd numbers: <span id="task4_rez5"></span></p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Task 6</legend>
+        <label>Calculator</label>
+        <button type="button" onclick="task6()">GO</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>Task 7</legend>
+        <label>Enter number and shift</label>
+        <input type="text" id="task7_var1" placeholder="Number">
+        <input type="text" id="task7_var2" placeholder="Shift">
+        <button type="button" onclick="task7()">Change</button>
+        <p>Modified number: <span id="task7_rez"></span></p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Task 8</legend>
+        <label>Display multiplication table</label>
+        <button type="button" onclick="task8()">GO</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>Task 9</legend>
+        <label>Display multiplication table</label>
+        <button type="button" onclick="task9('mult_table')">GO</button>
+        <br>
+        <br>
+        <div id="mult_table" style="display: flex; flex-wrap: wrap;"></div>
+    </fieldset>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

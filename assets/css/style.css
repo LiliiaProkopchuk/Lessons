@@ -1,0 +1,54 @@
+@font-face{
+    font-family: 'Merienda-Bold';
+    src: url('../fonts/Merienda/Merienda-Bold.ttf');
+}
+@font-face{
+    font-family: '/MarckScript-Regular';
+    src: url('../fonts/Marck_Script/MarckScript-Regular.ttf');
+}
+@font-face{
+    font-family: 'Acme-Regular';
+    src: url('../fonts/Acme/Acme-Regular.ttf');
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('../full-bloom.png');
+}
+h1{
+    font-family: 'Merienda-Bold';
+    text-align: center;
+    font-size: 50px;
+    text-shadow: 5px 5px 10px #af5f1e;
+}
+ol{
+    padding-left: 150px;
+    list-style-type: none;
+}
+ol>li{
+    font-size: 25px;
+    color: #b92b2b;
+    font-family: '/MarckScript-Regular';
+}
+ul{
+    list-style-type: none;
+}
+ul>li::before{
+    content: "➠";
+    color:#b92b2b;
+}
+a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #311905;
+    font-family: 'Acme-Regular';
+}
+a:hover{
+    color:#6f218b;
+}
+a:visited{
+    color:#a85510;
+}
+span{
+    font-family: 'Acme-Regular';
+}

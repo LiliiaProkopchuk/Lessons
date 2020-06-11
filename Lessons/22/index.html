@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson22</title>
+    <style>
+        body {
+            background-color: aquamarine;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #32118b;
+        }
+
+        fieldset {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        legend {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #056b8a;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Task 1</legend>
+        <button type="button" onclick="task1()">Hello</button>
+    </fieldset>
+    <fieldset>
+        <legend>Task 2</legend>
+        <label>What is your date of birth?</label><br>
+        <input type="text" id="task2_var" placeholder="Year"><br>
+        <button type="button" onclick="task2()">Calculate</button>
+        <p>Your age: <span id="task2_rez"></span></p>
+    </fieldset>
+    <fieldset>
+        <legend>Task 3</legend>
+        <label>Side length of a square</label><br>
+        <input type="text" id="task3_var" placeholder="Length"><br>
+        <button type="button" onclick="task3()">Calculate</button>
+        <p>Square perimeter: <span id="task3_rez"></span></p>
+    </fieldset>
+    <fieldset>
+        <legend>Task 4</legend>
+        <label>Circle radius</label><br>
+        <input type="text" id="task4_var" placeholder="Radius"><br>
+        <button type="button" onclick="task4()">Calculate</button>
+        <p>Circle area: <span id="task4_rez"></span></p>
+    </fieldset>
+    <fieldset>
+        <legend>Task 5</legend>
+        <label>Distance between cities</label><br>
+        <input type="text" id="task5_var1" placeholder="Kilometers"><br>
+        <label>Travel time</label><br>
+        <input type="text" id="task5_var2" placeholder="Hours">
+        <input type="text" id="task5_var3" placeholder="Minutes"><br>
+        <button type="button" onclick="task5()">Calculate</button>
+        <p>Movement speed: <span id="task5_rez"></span></p>
+    </fieldset>
+    <fieldset>
+        <legend>Task 6</legend>
+        <label>Exchange Rates</label><br>
+        <input type="text" id="task6_var" placeholder="Dollar"><br>
+        <button type="button" onclick="task6()">Calculate</button>
+        <p>Euro: <span id="task6_rez"></span></p>
+    </fieldset>
+    <fieldset>
+        <legend>Task 7</legend>
+        <label>Flash drive volume</label><br>
+        <input type="text" id="task7_var" placeholder="Gigabytes"><br>
+        <button type="button" onclick="task7()">Calculate</button>
+        <p>Number of files: <span id="task7_rez"></span></p>
+    </fieldset>
+    <fieldset>
+        <legend>Task 8</legend>
+        <label>How much money is in the wallet?</label><br>
+        <input type="text" id="task8_var1" placeholder="Dollars"><br>
+        <label>How much is the chocolate?</label><br>
+        <input type="text" id="task8_var2" placeholder="Price"><br>
+        <button type="button" onclick="task8()">Calculate</button>
+        <p>Number of chocolates: <span id="task8_rez1"></span></p>
+        <p>Change: <span id="task8_rez2"></span></p>
+    </fieldset>
+    <fieldset>
+        <legend>Task 9</legend>
+        <label>Enter the number</label><br>
+        <input type="text" id="task9_var" placeholder="Three-digit"><br>
+        <button type="button" onclick="task9()">Calculate</button>
+        <p>Number in reverse order: <span id="task9_rez"></span></p>
+    </fieldset>
+    <fieldset>
+        <legend>Task 10</legend>
+        <label>Deposit amount</label><br>
+        <input type="text" id="task10_var" placeholder="Dollars"><br>
+        <button type="button" onclick="task10()">Calculate</button>
+        <p>Accrued interest: <span id="task10_rez"></span></p>
+    </fieldset>
+
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

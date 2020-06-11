@@ -1,0 +1,42 @@
+body {
+    background-color: #121116;
+    margin: 0px;
+    padding: 0px;
+}
+.head {
+    text-align: center;
+    margin-top: 104px;
+}
+header{
+    margin-bottom: 21px;
+}
+main {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    color: #fefbfc;
+}
+main p {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 6px;
+}
+.social{ 
+    margin-bottom: 1px;
+}
+nav{
+    margin-top: 0px;
+    margin-bottom: 72px;
+    margin-left: 604px;
+}
+nav a{
+    margin-right: 17px;
+}
+footer{
+    color: #fefbfc;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+}
+span{
+    color: #19c8fa;
+}

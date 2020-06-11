@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    background-color: #70bfff;
+}
+h2{
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+    font-size: 70px;
+    text-align: center;
+    line-height: 480px;
+}
+li{
+    width: 370px;
+    height: 80px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    display: inline-flex;
+    justify-content: center;
+    box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.315);
+    transform: perspective(1px) translateZ(0);
+    transition-duration: 0.5s;
+}
+li:hover, li:focus, li:active {
+    transform: scale(1.1);
+    transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+    cursor: pointer;
+}
+.main{
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0 auto;
+}
+.service{
+    width: 45%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    color: #262626;
+    text-align: center;
+    line-height: 100px;
+    width: 285px;
+    border-right: 2px solid #9d9d9d ;
+}
+.icon{
+    width: 115px;
+    text-align: center;
+    font-size: 50px;
+    line-height: 100px;
+    color: #262626;
+}
+.text_third{
+    line-height: 20px;
+    padding: 25px;
+}
+.tomato{
+    width: 45%;
+    height: 480px;
+    background-image: url("../tomato.png");
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}

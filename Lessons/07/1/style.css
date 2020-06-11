@@ -1,0 +1,82 @@
+*{
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header:nth-child(1){
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 20px;
+    letter-spacing: 2px;
+}
+header:nth-child(3){
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+header h1{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-size: 48px;
+    text-transform: uppercase;
+    color: #0ec8cb;
+}
+header{
+    padding-bottom: 50px;
+    padding-top:100px;
+    text-align: center;
+}
+ul{
+    padding-left: 140px;
+    font-size: 0;
+}
+li {
+    font-size: 14px;
+    border: 1px solid #ededed;
+    display: inline-block;
+    width: 240px;
+    height: 420px;
+    background-color: #f7f7f7;
+    padding: 15px;
+}
+li p {
+    text-align: center;
+    padding: 20px;
+}
+
+li h2{
+    font-size: 21px;
+    text-transform: uppercase;  
+    text-align: center; 
+}
+li:hover{
+    background-color: #0ec8cb;
+    color: white;
+}
+.icon{
+    margin: 80px;
+    width: 70px;
+    height: 70px;
+    background-image: url(sprite.png);
+}
+li:hover .anchor {
+    background-position: 0px -77px;
+}
+.diamond {
+    background-position: -90px 0px;
+}
+li:hover .diamond{
+    background-position: -90px -77px;
+}
+.glasses {
+    background-position: -185px 0px;
+}
+li:hover .glasses{
+    background-position: -185px -77px;
+}
+.monitor {
+    background-position: -278px 0px;
+}
+li:hover .monitor{
+    background-position: -278px -77px;
+}

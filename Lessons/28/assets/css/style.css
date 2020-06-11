@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #90a2af;
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+.task1_center{
+    width: 50%;
+    height: 200px;
+    margin: 0 auto;
+}
+.task2_center{
+    width: 80%;
+    height: 200px;
+    margin: 0 auto;
+}
+.task3_center{
+    width: 50%;
+    height: 300px;
+    margin: 0 auto;
+}
+.task1, .task2, .task3{
+    border: 1px solid #d86624;
+    border-radius: 10px;
+}

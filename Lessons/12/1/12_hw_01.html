@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="assets/plagins/mask.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#phone_number').mask('+38 (099) 999 99 99')
+        })
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="top">
+                <div class="title">Contact </div>
+                <div class="title2">
+                    <p>For new projects, ideas, business or anything
+                        you'd like to discuss, contact with me!</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <div class="container">
+            <form action="#" method="GET" name="information">
+
+                <div class="area"><input type="text" placeholder="Your Name" name="name"></div>
+                <div class="area"><input type="email" placeholder="Your email" name="email"></div>
+                <div class="area"><input type="text" placeholder="Your phone number" name="phone_number"
+                        id="phone_number"></div>
+                <div class="area"><textarea placeholder="Your massage" class="message" name="message"></textarea>
+                </div>
+
+                <button name="Send">Send</button>
+            </form>
+        </div>
+        <div class="contact">
+            <h2>ADDRESS</h2>
+            <p>123 City name, Street, City, Country</p>
+            <h2>EMAIL</h2>
+            <p>cahee@domain.com</p>
+            <h2>PHONE</h2>
+            <p>+012 345 6789</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="left"> &#169; 2015 Company. All right reserved.</div>
+        <div class="center">Cahee</div>
+        <div class="right">Made with <span>love</span> by Auskteez</div>
+    </footer>
+</body>
+
+</html>

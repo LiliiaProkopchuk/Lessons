@@ -1,0 +1,262 @@
+@font-face{
+    font-family: 'Lato Bold';
+    src: url('../fonts/Lato-Bold.ttf');
+}
+@font-face{
+    font-family: 'Lato Light';
+    src: url('../fonts/Lato-Light.ttf');
+}
+*{transition: all .1s ease-in;}
+body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #3c3c3c;
+}
+h1{
+    font-size: 34px;
+    text-transform: uppercase;
+    margin-top: 110px;
+    margin-bottom: 15px;
+    font-family: 'lato bold';
+}
+hr{
+    text-align: center;
+    width: 45px;
+    height: 3px;
+    background-color: #dddbdb; 
+    border: none;
+}
+header>p.title{
+    font-family: 'lato light';
+    font-size: 16px;
+}
+.box{
+    width: 1170px;
+    height: 330px;
+    position: relative;
+    margin: 0 auto;
+}
+.title{
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 60px;
+}
+.icon{
+    width: 40px;
+    height: 40px;
+    background-color: #5ecbe7;
+    font-size: 20px;
+    box-sizing: border-box;
+    padding-top: 8px;
+}
+.icon:hover a{
+    color: #6e6480;
+}
+.icon.tw{
+    position: absolute;
+    left: 70px;
+    top: 115px;
+}
+.icon.fb{
+    position: absolute;
+    left: 115px;
+    top: 115px;
+}
+.icon.gl{
+    position: absolute;
+    left: 160px;
+    top: 115px;
+}
+a{
+    color: white;
+}
+
+.lead{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 270px;
+    height: 270px;
+}
+.john1{
+    position: absolute;
+    width: 270px;
+    height: 270px;
+}
+.john2{
+    position: absolute;
+    width: 270px;
+    height: 270px;
+}
+.john1 div, .john2 div{
+    position: absolute;
+}
+.lead .john1{
+    background-image: url('../john.png');
+    transform: scale(1);
+}
+.lead .john2{
+    background-color: #18b5dc;
+    transform: scale(0);
+}
+.lead:hover .john1{
+    transform: scalex(-1);
+}
+.lead:hover .john2{
+    transform: scale(1);
+}
+
+
+.developer{
+    position: absolute;
+    left: 300px;
+    top: 0;
+    width: 270px;
+    height: 270px;
+}
+.alex1{
+    position: absolute;
+    width: 270px;
+    height: 270px;
+}
+.alex2{
+    position: absolute;
+    width: 270px;
+    height: 270px;
+}
+.alex1 div, .alex2 div{
+    position: absolute;
+}
+.developer .alex1{
+    background-image: url('../alex.png');
+    transform: scale(1);
+}
+.developer .alex2{
+    background-color: #18b5dc;
+    transform: scale(0);
+}
+.developer:hover .alex1{
+    transform: scaleX(-1);
+}
+.developer:hover .alex2{
+    transform: scale(1);
+}
+
+
+.artist{
+    position: absolute;
+    left: 600px;
+    top: 0;
+    width: 270px;
+    height: 270px;
+}
+.elena1{
+    position: absolute;
+    width: 270px;
+    height: 270px;
+}
+.elena2{
+    position: absolute;
+    width: 270px;
+    height: 270px;
+}
+.elena1 div, .elena2 div{
+    position: absolute;
+}
+.artist .elena1{
+    background-image: url('../elena.png');
+    transform: scale(1);
+}
+.artist .elena2{
+    background-color: #18b5dc;
+    transform: scale(0);
+}
+.artist:hover .elena1{
+    transform: scaleX(-1);
+}
+.artist:hover .elena2{
+    transform: scale(1);
+}
+
+
+.graphic{
+    position: absolute;
+    left: 900px;
+    top: 0;
+    width: 270px;
+    height: 270px;
+}
+.lily1{
+    position: absolute;
+    width: 270px;
+    height: 270px;
+}
+.lily2{
+    position: absolute;
+    width: 270px;
+    height: 270px;
+}
+.lily1 div, .lily2 div{
+    position: absolute;
+}
+.graphic .lily1{
+    background-image: url('../lily.png');
+    transform: scale(1);
+}
+.graphic .lily2{
+    background-color: #18b5dc;
+    transform: scale(0);
+}
+.graphic:hover .lily1{
+    transform: scaleX(-1);
+}
+.graphic:hover .lily2{
+    transform: scale(1);
+}
+
+div.name_jonn{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 270px;
+    height: 50px;
+    text-align: start;
+    line-height: 0.1;
+}
+div.name_alex{
+    position: absolute;
+    left: 300px;
+    bottom: 0;
+    width: 270px;
+    height: 50px;
+    text-align: start;
+    line-height: 0.1;
+}
+div.name_elena{
+    position: absolute;
+    right: 300px;
+    bottom: 0;
+    width: 270px;
+    height: 50px;
+    text-align: start;
+    line-height: 0.1;
+}
+div.name_lily{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 270px;
+    height: 50px;
+    text-align: start;
+    line-height: 0.1;
+}
+p:first-child{
+    font-family: 'lato bold';
+    font-size: 18px;
+}
+p:last-child{
+    font-family: 'lato light';
+    font-size: 14px;
+}

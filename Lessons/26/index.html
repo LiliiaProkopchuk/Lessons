@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The objects</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="cars">
+        <div class="cars_first">
+            <p class="title">Vehicle Information</p>
+            <br>
+            <button type="button" onclick="drawInf()">Receive</button>
+            <div id="draw_car"></div>
+        </div>
+        <div class="cars_second">
+            <fieldset>
+                <p class="title">Calculation of time to overcome the distance</p>
+                <br>
+                <label>Enter distance</label>
+                <br>
+                <input type="text" id="task2_var" placeholder="Kilometers">
+                <br>
+                <br>
+                <button type="button" onclick="neenedTime()">Count</button>
+                <p>Time needed: <span id="task2_rez"></span></p>
+            </fieldset>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="fraction">
+            <fieldset>
+                <legend>Task 2</legend>
+                <br>
+                <button type="button" onclick="addFraction()">View information</button>
+                <div id="draw_frac"></div>
+            </fieldset>
+        </div>
+        <div class="time">
+            <fieldset>
+                <legend>Task 3</legend>
+                <button type="button" onclick="drawTime()">View information</button>
+                <br>
+                <div id="time_inf"></div>
+
+                <label>Number of seconds</label>
+                <input type="text" id="change_sec" placeholder="Seconds">
+                <button type="button" onclick="incSec()">Increase</button>
+                <button type="button" onclick="redSec()">Reduce</button>
+                <br>
+                <br>
+
+                <label>Number of minutes</label>
+                <input type="text" id="change_min" placeholder="Minutes">
+                <button type="button" onclick="incMin()">Increase</button>
+                <button type="button" onclick="redMin()">Reduce</button>
+                <br>
+                <br>
+
+                <label>Number of hours</label>
+                <input type="text" id="change_hours" placeholder="Hours">
+                <button type="button" onclick="incHours()">Increase</button>
+                <button type="button" onclick="redHours()">Reduce</button>
+                <br>
+                <br>
+
+            </fieldset>
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

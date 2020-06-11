@@ -1,0 +1,49 @@
+body{
+    width: 100%;
+    margin: 0 auto;
+    background-color: #d1bb59;
+}
+.task_1, .task_2, .task_4{
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.shop{
+    width: 30%;
+    height: 250px;
+    padding: 15px;
+    border: 2px solid #148956;
+    box-sizing: border-box;
+}
+.check{
+    width: 25%;
+    height: 250px;
+    padding: 15px;
+    border: 2px solid #148956;
+    box-sizing: border-box;
+}
+.academy{
+    width: 28%;
+    height: 270px;
+    padding: 15px;
+    border: 2px solid #148956;
+    box-sizing: border-box;
+}
+.academy_second{
+    width: 15%;
+    height: 270px;
+    padding: 15px;
+    border: 2px solid #148956;
+    box-sizing: border-box;
+}
+h2{
+    color: #083622;
+    text-align: center;
+}
+.without{
+    list-style-type: none;
+}

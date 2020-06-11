@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body {
+            background-color: #e4cfb4;
+        }
+
+        fieldset {
+            margin: 0 auto;
+            width: 800px;
+        }
+
+        fieldset {
+            border: 2px solid #146975;
+        }
+
+        p {
+            font-weight: 600;
+            color: #962d2d;
+        }
+
+        p.quiz {
+            text-align: center;
+        }
+
+        a {
+            font-size: 50px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Task 9</legend>
+        <label>The capital of Ukraine is</label>
+        <br>
+        <input type="radio" id="q1_var1" name="1">Kiev
+        <br>
+        <input type="radio" id="q1_var2" name="1">Istanbul
+        <br>
+        <input type="radio" id="q1_var3" name="1">Nikolaev
+        <br>
+        <br>
+        <label>The largest animal in the world is</label>
+        <br>
+        <input type="radio" id="q2_var1" name="2">Elephant
+        <br>
+        <input type="radio" id="q2_var2" name="2">Blue whale
+        <br>
+        <input type="radio" id="q2_var3" name="2">Bear
+        <br>
+        <br>
+        <label>The brightest star is</label>
+        <br>
+        <input type="radio" id="q3_var1" name="3">Sirius
+        <br>
+        <input type="radio" id="q3_var2" name="3">The sun
+        <br>
+        <input type="radio" id="q3_var3" name="3">Vega
+        <br>
+        <br>
+        <button type="button" onclick="task9()">Check</button>
+        <p>Your result: <span id="task9_rez"></span></p>
+    </fieldset>
+
+    <p class="quiz"><a href="index.html">Back</a></p>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

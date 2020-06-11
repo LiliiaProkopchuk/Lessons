@@ -1,0 +1,73 @@
+@font-face {
+	font-family: misoBold;
+	src: url('../fonts/miso-bold.ttf');
+}
+@font-face {
+	font-family: miso;
+	src: url('../fonts/miso-light.ttf');
+}
+@font-face {
+	font-family: lato;
+	src: url('../fonts/Lato.ttf');
+}
+*{
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+body{
+    background-color: #fdde7e;
+}
+p{
+    font-size: 20px;
+}
+.cup{
+    width: 160px;
+    height: 160px;
+}
+.cup_center {
+    margin-bottom: 20px;
+}
+.content{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    width: 1140px;
+}
+.cart {
+    height: 445px;
+    border: 1px solid #edd076;
+    border-radius: 5px;
+    display: flex;
+    width: 360px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 0 95px 0 95px;
+}
+.cart_gold {
+    height:500px;
+}
+.price{
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-family: misoBold;
+    font-size: 70px;
+    color: green;
+}
+.price_center{
+    margin-bottom: 20px;
+}
+.title{
+    font-size: 56px;
+    font-family: miso;
+    margin-bottom: 15px;
+}
+.title_center{
+    margin-bottom: 30px;
+}
+.text{
+    font-size: 20px;
+    text-align: center;
+    font-family: lato;
+}
+    

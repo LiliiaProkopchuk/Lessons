@@ -1,0 +1,133 @@
+@font-face{
+    font-family: Quicksand-Bold;
+    src: url('../fonts/Quicksand-Bold.ttf');
+}
+@font-face{
+    font-family: Quicksand-Regular;
+    src: url('../fonts/Quicksand-Regular.ttf');
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #e5eeee;
+
+}
+.blank{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.registretion {
+    width: 400px;
+    background-image: url('../fon.jpg');
+    background-repeat: no-repeat;
+    padding: 45px 70px 55px 70px;
+    box-shadow: 0 40px 40px rgba(0, 0, 0, .8);
+}
+
+input{
+    background-color: rgba(122, 220, 219, 0);
+    border: 2px solid #9681c6;
+    width: 262px;
+    height: 42px;
+    font-size: 13px;
+    color: #b9b9cc;
+    padding-left: 15px;
+}
+input.button {
+    font-family: Quicksand-Bold;
+    font-size: 18px;
+    background-color: #23ae92;
+    border: none;
+    color: #fbf6e4;
+    width: 262px;
+    height: 42px;
+}
+input.button:hover {
+    background-color: #1b816d;
+    font-size: 20px;
+    cursor: pointer;
+}
+.top{
+    font-family: Quicksand-Bold;
+    font-size: 18px;
+}
+ul{
+    padding: 0;
+}
+ul.top{
+    margin-bottom: 47px;
+}
+.top a{
+    color: #fbf6e4;
+    text-decoration: none;
+}
+.top li{
+    list-style-type: none;
+    display: inline; 
+    margin-right: 23px; 
+    opacity: 0.5;
+}
+.top li:hover{
+    border-bottom: 2px solid #e66a64;
+    opacity: 1;
+}
+label{
+    font-family: Quicksand-Bold;
+    color: #fbf6e4;
+    vertical-align: top;
+}
+.keep label{
+    font-size: 13px;
+}
+.keep input{
+    width: 16px;
+    height: 16px;
+}
+.name, .password{
+    line-height: 30px;
+    font-size: 16px;
+}
+.name{
+    margin-bottom: 11px;
+}
+.password{
+    margin-bottom: 20px;
+}
+.keep{
+    margin-bottom: 37px;
+}
+.button{
+    margin-bottom: 14px;
+}
+
+.jq-checkbox.checked,
+.jq-checkbox{
+    background-color: #23ae92;
+}
+.bottom{
+    font-family: Quicksand-Regular;
+    font-size: 13px;
+    color: #b9b9cc;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    line-height: 22px;
+}
+
+.bottom a{
+    color: #fbf6e4;
+    text-decoration: none;
+}
+.bottom li{
+    list-style-type: none;
+    opacity: 0.5;
+    border-bottom: 1px solid #fbf6e4;
+}
+
