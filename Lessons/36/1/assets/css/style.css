@@ -1,0 +1,88 @@
+@font-face{
+    font-family: hans;
+    src: url('../fonts/HansKendrick-Regular.otf');
+}
+
+body{
+    background-color: #e2e7ec;
+}
+.content{
+    margin: 90px 8%;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 540px 540px;
+}
+.main{
+    background-image: url('../car.jpg');
+    grid-column: 1 / span 2;
+}
+.main p{
+    margin-top: 10px;
+}
+.main, .article{
+    height: 540px;
+}
+.article{
+    background-color: #ffffff;
+}
+.date {
+    font-family: hans;
+    font-size: 13px;
+    color: #afada9;
+    margin-top: 405px;
+    margin-left: 40px;
+}
+.text {
+    font-family: hans;
+    font-size: 30px;
+    font-weight: 900;
+    width: 310px;
+    color: #ffffff;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+.text_first{
+    width: 440px;
+    margin-top: 10px;
+}
+.article .date {
+    font-family: hans;
+    font-size: 13px;
+    color: #818181;
+    margin-top: 30px;
+    margin-left: 25px;
+}
+.article .text {
+    font-family: hans;
+    font-size: 22px;
+    font-weight: 900;
+    color: #1d1d1d;
+    margin-left: 25px;
+    margin-top: 10px;
+    margin-bottom: 55px;
+}
+.date, .text, .article .date, .article .text{
+    text-transform: uppercase;
+}
+[alt="author"]{
+    margin-left: 25px;
+}
+footer p{
+    font-family: hans;
+    font-size: 13px;
+    color: #99a5b0;
+    text-align: center;
+    margin: 80px;
+}
+footer p::after{
+    content: "LOADING NEW CONTENT";
+    font-family: hans;
+    font-size: 13px;
+    color: #99a5b0;
+    vertical-align: 60%;
+}
+
+
+
+
