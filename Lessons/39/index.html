@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 1</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        window.onload = function () {
+            let app = new Vue({
+                el: '#task_1',
+                data: {
+                    color: '',
+                    new_color: ''
+                },
+                methods: {
+                    showFon() {
+                        this.new_color = this.color;
+                        this.color = ''
+                    }
+                }
+            });
+            let app2 = new Vue({
+                el: '#task_2',
+                data: {
+                    show: false,
+                    message: '',
+                },
+                methods: {
+                    showTime() {
+                        app2.message = 'Current date and time: ' + new Date().toLocaleString()
+                        alert(app2.message)
+                    },
+                    showButton(event) {
+                        switch (event.which) {
+                            case 1:
+                                alert('Left mouse button.');
+                                break;
+                            case 2:
+                                alert('Middle mouse button.');
+                                break;
+                            case 3:
+                                alert('Right mouse button');
+                                break;
+                            default:
+                                alert('You have a strange mouse!');
+                        }
+                    }
+                }
+            })
+        }
+    </script>
+    <style>
+        body {
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input {
+            height: 30px;
+        }
+
+        button {
+            width: 150px;
+            height: 30px;
+            background-color: #a88139;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #333;
+            margin-bottom: 20px;
+            text-align: center;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="task_1">
+        <div v-bind:style="{ 'background-color': new_color }" style="width: 500px;height: 200px">
+            <input type="text" v-model="color"> <button type="button" v-on:click="showFon">Show</button>
+            <p>Background color entered: <span>{{new_color}}</span></p>
+        </div>
+    </div>
+    <div id="task_2">
+        <button type="button" v-on:click.prevent="show = !show">Show function</button><br>
+        <button type="button" v-if="show" v-on:click.prevent="showTime">Show time</button>
+        <button type="button" v-if="show" v-on:mousedown.prevent="showButton($event)">Which mouse button</button>
+    </div>
+</body>
+
+</html>

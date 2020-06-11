@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 2</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        window.onload = function () {
+            let app = new Vue({
+                el: '#task_1',
+                data: {
+                    items: [
+                        { selected: 'Red' },
+                        { selected: 'Blue' },
+                        { selected: 'Yellow' },
+                        { selected: 'Violet' },
+                        { selected: 'Brown' },
+                        { selected: 'Gray' },
+                        { selected: 'Purple' },
+                        { selected: 'Pink' },
+                        { selected: 'Aquamarine' },
+                        { selected: 'Orange' },
+                        { selected: 'Green' },
+                        { selected: 'Olive' },
+                        { selected: 'Turquoise' },
+                        { selected: 'Magenta' },
+                        { selected: 'Lavender' },
+                        { selected: 'Indigo' },
+                        { selected: 'Wheat' }
+                    ],
+                    selected: '',
+                    text: ''
+                }
+            });
+
+            let app2 = new Vue({
+                el: '#task_2',
+                data: {
+                    links: [
+                        {
+                            name: 'Instagram',
+                            title: 'Instagram — приложение для обмена фотографиями и видеозаписями с элементами социальной сети, позволяющее снимать фотографии и видео, применять к ним фильтры, а также распространять их через свой сервис и ряд других социальных сетей',
+                            path: 'https://www.instagram.com/'
+                        }, {
+                            name: 'Facebook',
+                            title: 'Facebook — крупнейшая социальная сеть в мире и одноимённая компания, владеющая ею. Была основана 4 февраля 2004 года Марком Цукербергом и его соседями по комнате во время обучения в Гарвардском университете — Эдуардо Саверином, Дастином Московицем и Крисом Хьюзом.',
+                            path: 'https://www.facebook.com/'
+                        }, {
+                            name: 'Beetroot Academy',
+                            title: 'Beetroot Academy – это шведско-украинская неприбыльная IT-школа, которая стремится влиять на украинское общество с помощью качественного IT-образования.',
+                            path: 'https://beetroot.academy/'
+                        }, {
+                            name: 'Booking.com',
+                            title: 'Booking.com — система интернет-бронирования отелей, основана в Амстердаме в 1996 году, приобретена в 2005 году за $133 000 000 американской компанией англ. The Priceline Group, фокусирующейся на европейский рынок. Штаб-квартира компании находится в Амстердаме, Нидерланды.',
+                            path: 'https://www.booking.com/'
+                        }, {
+                            name: 'AliExpress',
+                            title: 'AliExpress — глобальная виртуальная торговая площадка, предоставляющая возможность покупать товары производителей из КНР, а также России, Европы, Турции и других стран. Товары на площадке продаются в розницу и мелким оптом. Информация о товарах автоматически переводится на разные языки.',
+                            path: 'https://best.aliexpress.ru/'
+                        }, {
+                            name: 'Rozetka.ua',
+                            title: 'Rozetka.ua  - украинский интернет-магазин и маркетплейс , появившийся 2005 года. Имеет отделения в Киеве, Броварах и Одессе. По состоянию на апрель 2020 сайт занимает 1 место среди самых посещаемых в Украине.',
+                            path: 'https://rozetka.com.ua/'
+                        }, {
+                            name: 'Pinterest',
+                            title: 'Pinterest — социальный интернет-сервис, фотохостинг, позволяющий пользователям добавлять в режиме онлайн изображения, помещать их в тематические коллекции и делиться ими с другими пользователями. Изображения можно «приколоть» к коллекциям, которые называются «досками».',
+                            path: 'https://www.pinterest.com/'
+                        }
+                    ]
+                }
+            });
+        }
+
+
+    </script>
+    <style>
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 20px;
+        }
+
+        #task_1,
+        #task_2 {
+            border: 1px solid gray;
+            padding: 20px;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        textarea {
+            width: 300px;
+            height: 100px;
+            resize: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: teal;
+            line-height: 35px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="task_1">
+        <textarea type="text" v-model="text" placeholder="Your text"></textarea>
+        <br>
+        <select v-model="selected">
+            <option disabled value="">-=Choose one of the colors=-</option>
+            <option v-for="item in items">{{item.selected}}</option>
+        </select>
+        <br>
+        <br>
+        <span>Result: </span>
+        <span class="rez" v-bind:style="{ color: selected }">{{ text }}</span>
+
+    </div>
+
+    <div id="task_2">
+        <ol>
+            <li v-for="link in links">
+                <a v-bind:href="link.path" v-bind:title="link.title" target="_blank">{{link.name}}</a>
+            </li>
+        </ol>
+    </div>
+
+</body>
+
+</html>

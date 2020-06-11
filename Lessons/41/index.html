@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 3</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        Vue.component("result", {
+            props: ['counter'],
+            data: function () {
+                return {
+                    count: 0,
+                    focused: false
+                }
+            },
+            template: '#contant'
+        });
+
+        window.onload = function () {
+            let app = new Vue({
+                el: '#app'
+            })
+        };
+
+    //не поняла как очистить форму после потери фокуса
+
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+
+        .container {
+            width: 50%;
+            border: 2px solid rgb(156, 109, 109);
+            margin: 0 auto;
+            padding: 30px 0;
+        }
+
+        .counter {
+            margin: 0 auto;
+            width: 50%;
+        }
+
+        button {
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 40px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div id="app">
+            <result></result>
+        </div>
+
+        <template id="contant">
+            <div class="counter">
+                <input type="text" v-model="count" @focus="focused = false" @blur="focused = true">
+                <p> Total: <span v-show="focused">{{ count }}</span></p>
+                <button v-on:click="count++"> + </button>
+                <button v-on:click="count--"> - </button>
+            </div>
+        </template>
+
+    </div>
+</body>
+
+</html>
