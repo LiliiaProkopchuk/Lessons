@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #b7aec9;
+}
+.row{
+    display: flex;
+    justify-content: space-around;
+    margin: 2px;
+}
+.card, img{
+    width: 100px;
+    height: 158px;
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 50px;
+    line-height: 158px;
+    text-align: center;
+}
+.move{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: .5s;
+    &:hover{
+        transform: rotateY(180deg);
+    }
+}
+img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+}
+.card{
+    transform: rotateY(180deg);
+}
+.red:hover{
+    color:red;
+}

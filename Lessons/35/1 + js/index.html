@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>Cards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div id="koloda"></div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        const nominal = ['6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+        const masti = [
+            {
+                "color": "#f00",
+                "symbol": "&hearts;"
+            }, {
+                "color": "#f00",
+                "symbol": "&diams;"
+            },
+            {
+                "color": "#000",
+                "symbol": "&spades;"
+            },
+            {
+                "color": "#000",
+                "symbol": "&clubs;"
+            }
+        ];
+        const animate = ['animate__flash', 'animate__flash', 'animate__tada', 'animate__jello', 'animate__bounceIn', 'animate__fadeIn', 'animate__fadeIn', 'animate__flip', 'animate__flipInY', 'animate__flipInY', 'animate__rollIn', 'animate__rollIn', 'animate__zoomOutRight', 'animate__slideInDown', 'animate__slideOutDown', 'animate__slideOutUp']
+        let cards = '';
+        $(document).ready(function () {
+
+            for (let m = 0; m < masti.length; m++) {
+                for (let n = 0; n < nominal.length; n++) {
+                    cards += `
+                       <div class="card">
+                        <div class="card_front" style="color:${masti[m].color}">${nominal[n]}${masti[m].symbol}</div>
+                        <div class="card_back animate__animated"><img src="assets/images/77358594_d00132r04.jpg" alt="shirt"></div>
+                       </div>
+                       `;
+                }
+            }
+            console.log(cards)
+            $("#koloda").html(cards);
+
+            $("body").on('click', '.card_back', function (e) {
+                let randomIndex = Math.floor(Math.random() * 16);
+                let animClick = animate[randomIndex];
+                $(this).addClass(animClick);
+            });
+        });
+    </script>
+</body>
+
+</html>
