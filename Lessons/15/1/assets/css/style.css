@@ -11,6 +11,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+  overflow: hidden;
 }
 .part_1 .top header {
   padding: 0 10%;
@@ -44,6 +45,56 @@
 .part_1 .top header .logo a {
   text-decoration: none;
   color: #262626;
+}
+.part_1 .top header .menu-icon {
+  z-index: 19;
+  position: relative;
+  display: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.part_1 .top header .menu-icon-line {
+  position: relative;
+  width: 30px;
+  height: 5px;
+  background-color: #262626;
+}
+.part_1 .top header .menu-icon-line::before {
+  position: absolute;
+  left: 0;
+  top: -10px;
+  content: '';
+  width: 30px;
+  height: 5px;
+  background-color: #262626;
+  transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+.part_1 .top header .menu-icon-line::after {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  content: '';
+  width: 30px;
+  height: 5px;
+  background-color: #262626;
+  transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+.part_1 .top header .menu-icon.menu-icon-active .menu-icon-line {
+  background-color: transparent;
+}
+.part_1 .top header .menu-icon.menu-icon-active .menu-icon-line::before {
+  transform: rotate(45deg);
+  top: 0;
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
+.part_1 .top header .menu-icon.menu-icon-active .menu-icon-line::after {
+  transform: rotate(-45deg);
+  top: 0;
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
+.part_1 .top header .mobile-nav {
+  display: none;
 }
 .part_1 .top .info {
   margin-left: 10%;
@@ -599,6 +650,9 @@
   vertical-align: top;
 }
 @media screen and (max-width: 1024px) {
+  .part_1 .top header li > a {
+    margin-right: 20px;
+  }
   .part_1 .top .info button {
     margin-bottom: 50px;
   }
@@ -677,6 +731,62 @@
   }
 }
 @media screen and (max-width: 800px) {
+  .part_1 .top header {
+    padding: 0 0 0 50px;
+    line-height: 100px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .part_1 .top header ul.menu {
+    display: none;
+  }
+  .part_1 .top header .mobile-nav {
+    display: block;
+  }
+  .part_1 .top header ul.mobile-nav__list {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .part_1 .top header .mobile-nav__item {
+    margin-bottom: 20px;
+    line-height: 30px;
+  }
+  .part_1 .top header .mobile-nav__link {
+    color: #fff;
+  }
+  .part_1 .top header .mobile-nav__link:hover {
+    border-top: 3px solid #ff6033;
+    padding-top: 5px;
+  }
+  .mobile-nav {
+    z-index: 9;
+    display: block;
+    position: absolute;
+    right: -350px;
+    top: 0;
+    height: 100%;
+    width: 350px;
+    background-color: #ff6033;
+    text-align: center;
+    transition: transform 0.4s ease-in;
+  }
+  .mobile-nav--active {
+    transform: translateX(-100%);
+  }
+  .mobile-nav__title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 90px;
+  }
+  .part_1 .top header .menu-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+  }
   .part_1 .top header li > a {
     font-size: 16px;
     margin-right: 10px;
@@ -719,12 +829,6 @@
     width: 150px;
     height: 25px;
     font-size: 16px;
-  }
-  .part_1 .top header {
-    padding: 0 0 0 50px;
-    line-height: 100px;
-    width: 100%;
-    margin-bottom: 50px;
   }
   .part_1 .top .info p {
     margin: 0;
@@ -865,9 +969,6 @@
   .part_1 .top header ul {
     flex-direction: column;
   }
-  .part_1 .top header {
-    line-height: 40px;
-  }
   .part_2 h2 {
     font-size: 34px;
   }
@@ -958,14 +1059,17 @@
     font-size: 14px;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 320px) {
   .part_2 .main {
     width: 100%;
-    height: 470px;
+    height: 550px;
   }
   .part_2 h2 {
-    font-size: 27px;
-    line-height: 150px;
+    font-size: 24px;
+    line-height: 175px;
+  }
+  .part_2 .service {
+    width: 77%;
   }
   .part_2 .tomato {
     background-size: 75%;
@@ -981,10 +1085,13 @@
   .part_5 .first,
   .part_5 .second,
   .part_5 .third {
-    height: 220px;
+    height: 200px;
   }
   .part_6 .left,
   .part_6 .right {
-    padding: 0 10px;
+    padding: 0 9px;
+  }
+  .part_6 .header {
+    width: 95%;
   }
 }
