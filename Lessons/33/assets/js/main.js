@@ -189,7 +189,7 @@ $(document).ready(function () {
         if (Markers[i].phone != 0) {
             popup_dot += `<p>&#9742; ${Markers[i].phone}</p>`
         }
-        markers.addLayer(L.marker([Markers[i].n, Markers[i].e])).bindPopup(popup_dot);
+        markers.addLayer(L.marker([Markers[i].n, Markers[i].e]).bindPopup(popup_dot));
 
     };
     map.addLayer(markers);
