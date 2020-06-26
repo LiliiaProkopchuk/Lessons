@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tenali+Ramakrishna&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/plugin_slider/slick.css">
+    <link rel="stylesheet" href="assets/plugin_slider/slick-theme.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+
+    <div style="width: 900px; margin: 0 auto;">
+        <button type="button" onclick="showFav()" class="btn fav">Show favorite movies</button>
+        <div id="fav_list"></div>
+
+        <div style="display: flex; justify-content: space-between; border: 1px solid #fff;">
+            <input id="search" value=" " style="width: 400px;">
+            <select id="service">
+                <option disabled selected>-=Choose a resource=-</option>
+                <option value="OMDB">OMDb API</option>
+                <option value="MDB">Movie DataBase</option>
+            </select>
+            <select id="type">
+                <option value="movie">Movie</option>
+                <option value="series">Series</option>
+                <option value="episode">Episode</option>
+            </select>
+            <button class="search" onclick="SearchFilm($(this))">Search</button>
+        </div>
+        <br>
+        <div id="search_result"></div>
+        <div id="pager_wrap"></div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="assets/plugin_slider/slick.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
